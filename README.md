@@ -1,8 +1,8 @@
 # ZFS
 ## Создаем виртуальную машину
-1. '''vagrant up'''
-2. '''vagrant ssh'''
-3. '''sudo -i'''
+1. vagrant up
+2. vagrant ssh
+3. sudo -i
 
 ### Определение алгоритма с наилучшим сжатием
 '''
@@ -17,21 +17,21 @@
 '''
 ### Определение настроек пула
 '''
-1.Скачиваем архив в домашний каталог: 
+1. Скачиваем архив в домашний каталог: 
 [root@zfs ~]# wget -O archive.tar.gz --no-check-certificate 'https://drive.usercontent.google.com/download?id=1MvrcEp-WgAQe57aDEzxSRalPAwbNN1Bb&export=download' 
-2.Разархивируем его: [root@zfs ~]# tar -xzvf archive.tar.gz
-3.zpool import -d zpoolexport/ вывод показывает нам имя пула, тип raid и его состав (скрин 6)
-4.Импорт данного пула к нам в ОС zpool import -d zpoolexport/ otus (скрин 7)
-5.Запрос сразу всех параметром файловой системы: zfs get all otus
-6.C помощью команд можно уточнить конкретный параметр (скрин 8)
+2. Разархивируем его: [root@zfs ~]# tar -xzvf archive.tar.gz
+3. zpool import -d zpoolexport/ вывод показывает нам имя пула, тип raid и его состав (скрин 6)
+4. Импорт данного пула к нам в ОС zpool import -d zpoolexport/ otus (скрин 7)
+5. Запрос сразу всех параметром файловой системы: zfs get all otus
+6. C помощью команд можно уточнить конкретный параметр (скрин 8)
 '''
 ### Работа со снапшотом, поиск сообщения от преподавателя
 '''
-1.Скачаем файл, указанный в задании:
+1. Скачаем файл, указанный в задании:
 [root@zfs ~]# wget -O otus_task2.file --no-check-certificate https://drive.usercontent.google.com/download?id=1wgxjih8YZ-cqLqaZVa0lA3h3Y029c3oI&export=download
-2.Восстановим файловую систему из снапшота:
+2. Восстановим файловую систему из снапшота:
 zfs receive otus/test@today < otus_task2.file
-3.Ищем в каталоге /otus/test файл с именем “secret_message” (скрин 9)
+3. Ищем в каталоге /otus/test файл с именем “secret_message” (скрин 9)
  3.1 Содержимое найденного файла - ссылка на курс
 '''
 
